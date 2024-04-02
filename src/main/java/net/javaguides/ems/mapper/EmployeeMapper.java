@@ -5,7 +5,7 @@ import net.javaguides.ems.entity.Employee;
 
 public class EmployeeMapper {
 
-    public static EmployeeDto mapToEmployeeDto(Employee emp) {
+    public static EmployeeDto mapToEmployeeDto(Employee employee) {
         return new EmployeeDto(
                 employee.getId(),
                 employee.getFirstName(),
