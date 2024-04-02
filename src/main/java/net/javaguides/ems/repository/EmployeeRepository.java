@@ -1,2 +1,4 @@
-package net.javaguides.ems.repository;public interface EmployeeRepository {
+package net.javaguides.ems.repository;
+
+public interface EmployeeRepository {
 }
