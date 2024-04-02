@@ -21,7 +21,7 @@ public class Employee {
     private String firstName;
 
     @Column(name = "Last Name")
-    private String lasName;
+    private String lastName;
 
     @Column(name = "Email", nullable = false, unique = true)
     private String email;
