@@ -1,16 +1,17 @@
 package net.javaguides.ems.service;
 
 import net.javaguides.ems.dto.DepartmentDto;
+
 import java.util.List;
 
 public interface DepartmentService {
-    DepartmentDto createDept(DepartmentDto departmentDto);
+    DepartmentDto createDepartment(DepartmentDto departmentDto);
 
-    DepartmentDto getDeptById(Long departmentId);
+    DepartmentDto getDepartmentById(Long departmentId);
 
-    List<DepartmentDto> getAllDepts();
+    List<DepartmentDto> getAllDepartments();
 
-    DepartmentDto updateDept(Long departmentId, DepartmentDto updatedDept);
+    DepartmentDto updateDepartment(Long departmentId, DepartmentDto updatedDepartment);
 
-    void deleteDept(Long departmentId);
+    void deleteDepartment(Long departmentId);
 }
