@@ -4,7 +4,7 @@ import net.javaguides.ems.dto.DepartmentDto;
 import net.javaguides.ems.entity.Department;
 
 public class DepartmentMapper {
-    public static DepartmentDto mapToEmployeeDto(Department department) {
+    public static DepartmentDto mapToDeptDto(Department department) {
         return new DepartmentDto(
 
                 department.getId(),
@@ -13,7 +13,7 @@ public class DepartmentMapper {
         );
     }
 
-    public static Department mapToEmployee(DepartmentDto departmentDto) {
+    public static Department mapToDept(DepartmentDto departmentDto) {
         return new Department(
                 departmentDto.getId(),
                 departmentDto.getDeptName(),
