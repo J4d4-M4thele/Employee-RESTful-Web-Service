@@ -28,7 +28,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentDto getDepartmentById(Long departmentId) {
         Department department = departmentRepository.findById(departmentId).orElseThrow(
-                () -> new ResourceNotFoundException("Department is not exists with a given id: " + departmentId)
+                () -> new ResourceNotFoundException("Department does not exists with a given id: " + departmentId)
         );
         return DepartmentMapper.mapToDeptDto(department);
     }
@@ -36,7 +36,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<DepartmentDto> getAllDepartments() {
         List<Department> departments = departmentRepository.findAll();
-        return departments.stream().map((department) -> DepartmentMapper.mapToDeptDto(department))
+        return departments
+                .stream()
+                .map((department) -> DepartmentMapper.mapToDeptDto(department))
                 .collect(Collectors.toList());
     }
 
@@ -44,7 +46,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public DepartmentDto updateDepartment(Long departmentId, DepartmentDto updatedDepartment) {
 
         Department department = departmentRepository.findById(departmentId).orElseThrow(
-                () -> new ResourceNotFoundException("Department is not exists with a given id:"+ departmentId)
+                () -> new ResourceNotFoundException("Department does not exists with a given id:"+ departmentId)
         );
 
         department.setDeptName(updatedDepartment.getDeptName());
@@ -58,7 +60,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void deleteDepartment(Long departmentId) {
         departmentRepository.findById(departmentId).orElseThrow(
-                () -> new ResourceNotFoundException("Department is not exists with a given id: " + departmentId)
+                () -> new ResourceNotFoundException("Department does not exists with a given id: " + departmentId)
         );
 
         departmentRepository.deleteById(departmentId);
